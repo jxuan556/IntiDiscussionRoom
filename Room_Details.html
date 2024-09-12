@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Details and Booking</title>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feeback.html">Feeback</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <script>
+        function reserveRoom(event) {
+            event.preventDefault(); 
+
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+            var room = document.getElementById("room").value;
+            var duration = document.getElementById("duration").value;
+            var notes = document.getElementById("notes").value;
+
+            var booking = {
+                date: date,
+                time: time,
+                room: room,
+                duration: duration,
+                notes: notes
+            };
+
+            var bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+            bookings.push(booking);
+
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+
+            // Add notification here
+            alert("Room reserved successfully!");
+
+            window.location.href = "booking_history.html";
+        }
+
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+    <style>
+        /* CSS to resize the images */
+        img {
+            width: 200px; /* You can adjust the width as per your need */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>Discussion Room Details</h3>
+    <div>
+        <img src="img/Meeting_room1.jpg" alt="Discussion Room 1">
+        <p>Discusssion Room 1: TERMS & CONDITIONS - Room can fit maximum of 5 users at one time. Please use your INTI email at the time of booking and collect the key at the Library Counter. No food and drinks allowed in any discussion room (plain water is acceptable)</p>
+        <img src="img/Meeting_room1.jpg" alt="Discussion Room 2">
+        <p>Discussion Room 2: TERMS & CONDITIONS - Room can fit maximum of 5 users at one time. Please use your INTI email at the time of booking and collect the key at the Library Counter. No food and drinks allowed in any discussion room (plain water is acceptable)</p>
+        <img src="img/Meeting_room1.jpg" alt="Discussion Room 3">
+        <p>Discussion Room 3: TERMS & CONDITIONS - Room can fit maximum of 5 users at one time. Please use your INTI email at the time of booking and collect the key at the Library Counter. No food and drinks allowed in any discussion room (plain water is acceptable)</p>
+        <img src="img/Meeting_room2.jpg" alt="Discussion Room 4">
+        <p>Discussion Room 4: TERMS & CONDITIONS - Room can fit minimum of 5 users at one time. Please use your INTI email at the time of booking and collect the key at the Library Counter. No food and drinks allowed in any discussion room (plain water is acceptable)</p>
+        <img src="img/Meeting_room2.jpg" alt="Discussion Room 5">
+        <p>Discussion Room 5: TERMS & CONDITIONS - Room can fit minimum of 5 users at one time. Please use your INTI email at the time of booking and collect the key at the Library Counter. No food and drinks allowed in any discussion room (plain water is acceptable)</p>
+    </div>
+
+    <h3>Book a Discussion Room</h3>
+    <form onsubmit="reserveRoom(event)">
+        <div class="form-group">
+            <label for="date">Date of Meeting:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time of Meeting:</label>
+            <select id="time" name="time" required>
+                <option value="8:30">8:30 AM</option>
+                <option value="9:00">9:00 AM</option>
+                <option value="9:30">9:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="1:00">1:00 PM</option>
+                <option value="1:30">1:30 PM</option>
+                <option value="2:00">2:00 PM</option>
+                <option value="2:30">2:30 PM</option>
+                <option value="3:00">3:00 PM</option>
+                <option value="3:30">3:30 PM</option>
+                <option value="4:00">4:00 PM</option>
+                <option value="4:30">4:30 PM</option>
+                <option value="5:00">5:00 AM</option>
+                <option value="5:30">5:30 AM</option>
+                <option value="6:00">6:00 AM</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration (hours):</label>
+            <select id="duration" name="duration" required>
+                <option value="1">1 hour</option>
+                <option value="2">2 hours</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="room">Select Room:</label>
+            <select id="room" name="room" required>
+                <option value="room_1">Room 1</option>
+                <option value="room_2">Room 2</option>
+                <option value="room_3">Room 3</option>
+                <option value="room_4">Room 4</option>
+                <option value="room_5">Room 5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Reserve Room</button>
+        </div>
+    </form>
+    <button onclick="goToDashboard()">Close</button>
+</body>
+</html>
