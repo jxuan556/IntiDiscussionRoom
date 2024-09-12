@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html" class="active">Room Details</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <script>
+        function submitFeedback() {
+            var message = document.getElementById("message").value;
+            if (message) {
+                alert("Thank you for your feedback!");
+                // Here you can add code to send the feedback to your server
+            } else {
+                alert("Please fill out all fields before submitting.");
+            }
+        }
+
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback</h1>
+        <h2>Tell us!</h2>
+        <p>If you have any feedback or inquiry for us, we'd love to hear it!</p>
+        
+        <form>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="button" onclick="submitFeedback()">Submit</button>
+        </form>
+        
+    </div>
+    <h2>Or</h2>
+    <div class="image-container">
+        <img src="img/feedback.jpg" alt="Sample Image" id="my-image">
+    </div>
+
+    <button type="button" onclick="goToDashboard()">Close</button>
+</body>
+</html>
