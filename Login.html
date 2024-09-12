@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <div class="image-container"></div>
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+    <script>
+        function validateForm() {
+            var email = document.forms["loginForm"]["email"].value;
+            var password = document.forms["loginForm"]["password"].value;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@student\.newinti\.edu\.my$/;
+            var emailPattern2 = /^[a-zA-Z0-9._%+-]+@newinti\.edu\.my$/;
+            var errorMessage = "";
+
+            if (!emailPattern.test(email) && !emailPattern2.test(email)) {
+                errorMessage += "Email must be in the format xxxx@student.newinti.edu.my or xxxx@newinti.edu.my.\n";
+            }
+            if (password.length < 4) {
+                errorMessage += "Password must be at least 4 characters long.\n";
+            }
+            if (errorMessage) {
+                alert(errorMessage);
+                return false;
+            }
+            return true;
+        }
+
+        function sendResetLink() {
+            var email = document.getElementById("resetEmail").value;
+            alert("A password reset link has been sent to " + email);
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h3>User Login</h3>
+        <form name="loginForm" action="dashboard.html" method="post" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <p><a href="#" onclick="document.getElementById('forgotPasswordModal').style.display='block'">Forgot Password?</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Login">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" style="display:none;">
+        <div>
+            <h3>Forgot Password</h3>
+            <p>Enter your email address to receive a password reset link:</p>
+            <input type="text" id="resetEmail" placeholder="Enter your email" required>
+            <button onclick="sendResetLink()">Send Reset Link</button>
+            <button onclick="document.getElementById('forgotPasswordModal').style.display='none'">Close</button>
+        </div>
+    </div>
+</body>
+</html>
