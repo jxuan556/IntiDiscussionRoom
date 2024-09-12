@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discussion Room Reservation Table</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html">Room Details</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feeback.html">Feeback</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h1>Discussion Room Reservation Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Time Slot</th>
+                <th>Room 1</th>
+                <th>Room 2</th>
+                <th>Room 3</th>
+                <th>Room 4</th>
+                <th>Room 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09:00 AM - 10:00 AM</td>
+                <td>John Doe</td>
+                <td>-</td>
+                <td>Jane Smith</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10:00 AM - 11:00 AM</td>
+                <td>-</td>
+                <td>David Johnson</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>11:00 AM - 12:00 PM</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Emily Davis</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>12:00 PM - 01:00 PM</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Michael Lee</td>
+            </tr>
+            <tr>
+                <td>01:00 PM - 02:00 PM</td>
+                <td>-</td>
+                <td>Chris Brown</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>02:00 PM - 03:00 PM</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Emma Wilson</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>03:00 PM - 04:00 PM</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>04:00 PM - 05:00 PM</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="goToDashboard()">Close</button>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = 'Dashboard.html';
+        }
+    </script>
+</body>
+</html>
