@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Need Help</title>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html" class="active">Room Details</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Feeback.html">Feeback</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <script>
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+
+        function startChat() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            if (name && email) {
+                // Replace with the actual chat URL or function to start the chat
+                alert("Starting chat with " + name + " (" + email + ")");
+            } else {
+                alert("Please provide both name and email to start the chat.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Need Help</h1>
+
+    <h2>CHAT WITH A LIBRARIAN</h2>
+    <p>Monday - Friday, 9am - 5pm</p>
+    
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="button" onclick="startChat()">Start Chat</button>
+    </form>
+
+    <h2>Email Us</h2>
+    <p>We will get back to you as soon as possible!</p>
+    <p><a href="mailto:tsam.library@newinti.edu.my">tsam.library@newinti.edu.my</a></p>
+        
+    <button onclick="goToDashboard()">Close</button>
+</body>
+</html>
