@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking History</title>
+    <script>
+        window.onload = function() {
+            // Get bookings from local storage
+            var bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+            // Get the table body element
+            var tableBody = document.getElementById("bookingTableBody");
+
+            // Populate the table with booking data
+            bookings.forEach(function(booking) {
+                var row = tableBody.insertRow();
+
+                var cellId = row.insertCell(0);
+                var cellDate = row.insertCell(1);
+                var cellTime = row.insertCell(2);
+                var cellRoom = row.insertCell(3);
+                var cellDuration = row.insertCell(4);
+                var cellNotes = row.insertCell(5);
+
+                cellId.innerHTML = booking.id; // Display reservation ID
+                cellDate.innerHTML = booking.date;
+                cellTime.innerHTML = booking.time;
+                cellRoom.innerHTML = booking.room;
+                cellDuration.innerHTML = booking.duration + " hours";
+                cellNotes.innerHTML = booking.notes;
+            });
+        }
+
+        function goToDashboard() {
+            window.location.href = "Dashboard.html"; // Change this to the actual path of your dashboard page
+        }
+    </script>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="INTI University Logo" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html">Room Details</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h3>Booking History</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Room</th>
+                <th>Duration</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="bookingTableBody">
+            <!-- Booking records will be inserted here -->
+        </tbody>
+    </table>
+    <button onclick="goToDashboard()">Close</button>
+</body>
+</html>
