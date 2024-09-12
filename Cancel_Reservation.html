@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Meeting Room Reservation</title>
+    <script>
+        function goToDashboard() {
+            window.location.href = "Dashboard.html"; // Update this to the correct path
+        }
+
+        function handleCancellation(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var reservationId = document.getElementById("reservation-id").value;
+            var reason = document.getElementById("reason").value;
+
+            // Get bookings from local storage
+            var bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            var updatedBookings = bookings.filter(function(booking) {
+                return booking.id !== reservationId; // Remove the cancelled booking
+            });
+
+            // Update local storage
+            localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+
+            alert('Reservation cancelled successfully.');
+        }
+    </script>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="INTI University Logo" id="my-image">
+    </div>
+
+    <div>
+        <a href="Room_Details.html">Room Details</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html" class="active">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>Cancel Meeting Room Reservation</h1>
+        <form onsubmit="handleCancellation(event)">
+            <label for="reservation-id">Reservation ID:</label>
+            <input type="text" id="reservation-id" name="reservation-id" required>
+            
+            <label for="reason">Reason for Cancellation:</label>
+            <input type="text" id="reason" name="reason">
+            
+            <input type="submit" value="Cancel Reservation">
+        </form>
+    </div>
+
+    <button onclick="goToDashboard()">Close</button>
+</body>
+</html>
