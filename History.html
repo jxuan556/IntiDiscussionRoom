@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Room Reservation - Bookings</title>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html" class="active">Room Details</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</head>
+<body>
+    <div class="container">
+        <h2>Meeting Room Reservations</h2>
+
+        <div id="upcoming-bookings" class="booking-list">
+            <h3>Upcoming Bookings</h3>
+        </div>
+
+        <div id="previous-meetings" class="booking-list">
+            <h3>Previous Meetings</h3>
+        </div>
+    </div>
+
+    <script>
+        const bookings = [
+            { date: '2024-09-15', time: '11' , room: 'A'
+            
+    }
+]
