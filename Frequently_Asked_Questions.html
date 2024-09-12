@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Details and Booking</title>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html">Room Details</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feeback.html">Feeback</a>
+        <a href="The_Librarians.html">The Librarians</a>
+        <a href="User.html">User</a>
+    </div>    
+    
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <title>Frequently Asked Questions</title>
+    <style>
+        .faq-container {
+            width: 80%;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleAnswer(index) {
+            var answer = document.getElementById("answer-" + index);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">1. What rules do I need to follow when using a meeting room?</div>
+            <div class="faq-answer" id="answer-1">
+                Your activities in the space will be open to all library visitors.<br>
+                You may not collect fees.<br>
+                You may not sell products or services.<br>
+                Your reservation may be cancelled if you're more than 30 minutes late.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">2. Can I use a meeting room?</div>
+            <div class="faq-answer" id="answer-2">
+                Yes. You can reserve a meeting room. Find a room and request a reservation.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">3. How do I reserve a meeting room?</div>
+            <div class="faq-answer" id="answer-3">
+                You can reserve a meeting room online or contact your local community library.<br>
+                Reservations are accepted on a first-come, first-served basis.<br>
+                You will be notified if your request is approved or denied once staff have reviewed your request.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(4)">4. How much time may I reserve a meeting room for?</div>
+            <div class="faq-answer" id="answer-4">
+                You can reserve a meeting room for one to two hours as it's available while the library is open.<br>
+                Include enough time in your reservation to:<br>
+                - Set up your activity before it begins.<br>
+                - Clean up the room after your activity is complete.<br>
+                - Return the room to its original setup after your activity is complete.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(5)">5. What equipment is available in meeting rooms?</div>
+            <div class="faq-answer" id="answer-5">
+                All rooms have tables and chairs. Some rooms offer other equipment. Find details on Room Details.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(6)">6. How do I cancel a room reservation?</div>
+            <div class="faq-answer" id="answer-6">
+                To cancel a reservation, go to the cancel reservation page.
+            </div>
+        </div>
+    </div>
+        </div>
+        <a href="Dashboard.html" class="close-button">Close</a>
+    </div>
+
+
+</body>
+</html>
