@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Librarians</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
+    </div>
+
+    <div>
+        <a href="Dashboard.html">Home</a>
+        <a href="Room_Details.html" class="active">Room Details</a>
+        <a href="Reservation_Schedule.html">Discussion Rooms Reserve Table</a>
+        <a href="Booking_History.html">Booking History</a>
+        <a href="Cancel_Reservation.html">Cancel Reservation</a>
+        <a href="Need_Help.html">Need Help</a>
+        <a href="Feeback.html">Feeback</a>
+        <a href="Frequently_Asked_Questions.html">Frequently Asked Questions</a>
+        <a href="User.html">User</a>
+    </div>    
+
+    <div class="search-container">
+        <form action="search_results.html" method="get">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>The Librarians</h1>
+        <p>Meet our dedicated team of librarians who are here to help you!</p>
+
+        <div class="librarian">
+            <img src="img/Librarian1.png" alt="Librarian Photo">
+            <h2>MR.MOHAMAD FARIS</h2>
+            <p>Email: <a href="mohamadfaris.akadir@newinti.edu.my">johndoe@newinti.edu.my</a></p>
+            <P>Master in information Management,UITM</P>
+            <p>Specialization: CHIEF LIBRARIAN</p>
+            <div class="clear"></div>
+        </div>
+
+        <div class="librarian">
+            <img src="img/Librarian2.png" alt="Librarian Photo">
+            <h2>MS.NUR FITFAH BINTI AHMAD RIZAL</h2>
+            <p>Email: <a href="Nurfitrah.rizal@newinti.edu.my">janesmith@newinti.edu.my</a></p>
+            <p>Bachelor of information Science(Hons) (Library Management).UITM</p>
+            <p>Specialization: Librarians</p>
+            <div class="clear"></div>
+        </div>
+
+        <button type="button" onclick="goToDashboard()">Close</button>
+    </div>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
