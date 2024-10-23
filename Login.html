@@ -1,73 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <div class="image-container"></div>
-        <img src="img/inti-university-logo.png" alt="Sample Image" id="my-image">
-    </div>
-    <script>
-        function validateForm() {
-            var email = document.forms["loginForm"]["email"].value;
-            var password = document.forms["loginForm"]["password"].value;
-            var emailPattern = /^[a-zA-Z0-9._%+-]+@student\.newinti\.edu\.my$/;
-            var emailPattern2 = /^[a-zA-Z0-9._%+-]+@newinti\.edu\.my$/;
-            var errorMessage = "";
-
-            if (!emailPattern.test(email) && !emailPattern2.test(email)) {
-                errorMessage += "Email must be in the format xxxx@student.newinti.edu.my or xxxx@newinti.edu.my.\n";
-            }
-            if (password.length < 4) {
-                errorMessage += "Password must be at least 4 characters long.\n";
-            }
-            if (errorMessage) {
-                alert(errorMessage);
-                return false;
-            }
-            return true;
-        }
-
-        function sendResetLink() {
-            var email = document.getElementById("resetEmail").value;
-            alert("A password reset link has been sent to " + email);
-        }
-    </script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <center>
-        <h3>User Login</h3>
-        <form name="loginForm" action="dashboard.html" method="post" onsubmit="return validateForm()">
-            <table>
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" name="email" required></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="password" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center;">
-                        <p><a href="#" onclick="document.getElementById('forgotPasswordModal').style.display='block'">Forgot Password?</a></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center;">
-                        <input type="submit" value="Login">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </center>
 
-    <!-- Forgot Password Modal -->
-    <div id="forgotPasswordModal" style="display:none;">
-        <div>
-            <h3>Forgot Password</h3>
-            <p>Enter your email address to receive a password reset link:</p>
-            <input type="text" id="resetEmail" placeholder="Enter your email" required>
-            <button onclick="sendResetLink()">Send Reset Link</button>
-            <button onclick="document.getElementById('forgotPasswordModal').style.display='none'">Close</button>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo-container text-center">
+                <img src="img/INTI_Logo.png" alt="Inti University Logo">
+            </div>
+            <h3>Inti Discussion Room Reservation</h3>
+            <form id="loginForm" onsubmit="return validateForm()">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" name="email" id="email" required class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" name="password" id="password" required class="form-control">
+                </div>
+                <div class="text-center mb-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Login" class="btn btn-color w-100">
+                </div>
+            </form>
+        </div>
+
+        <div class="image-container">
+            <img src="img/login.webp" alt="Conference Room">
         </div>
     </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Forgot Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your email address to receive a password reset link:</p>
+                    <input type="email" id="resetEmail" placeholder="Enter your email" required class="form-control mb-3">
+                </div>
+                <div class="modal-footer">
+                    <button onclick="sendResetLink()" class="btn btn-color">Send Reset Link</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="javascript/Login_script.js"></script>
 </body>
+
 </html>
+
+

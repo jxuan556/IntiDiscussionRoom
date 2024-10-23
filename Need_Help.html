@@ -3,89 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Need Help</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="container my-4">
-        <!-- Header Image -->
-        <div class="image-container">
-            <img src="img/inti-university-logo.png" alt="INTI University Logo" class="img-fluid" style="max-height: 150px;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/INTI_Logo.png" alt="INTI University Logo" style="width: 300px; height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a href="Dashboard.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="Room_Details.html" class="nav-link">Room Details</a></li>
+                <li class="nav-item"><a href="Reservation_Schedule.html" class="nav-link">Reserve Table</a></li>
+                <li class="nav-item"><a href="Booking_History.html" class="nav-link">Booking History</a></li>
+                <li class="nav-item"><a href="Feedback.html" class="nav-link">Feedback</a></li>
+                <li class="nav-item"><a href="Frequently_Asked_Questions.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="The_Librarians.html" class="nav-link">The Librarians</a></li>
+                <li class="nav-item"><a href="User.html" class="nav-link">User</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <!-- Navigation Links -->
-        <div class="btn-group mb-4">
-            <a href="Dashboard.html" class="btn btn-primary">
-                <i class="fas fa-home"></i> Home
-            </a>
-            <a href="Room_Details.html" class="btn btn-primary">
-                <i class="fas fa-door-open"></i> Room <Details></Details>
-            </a>
-            <a href="Reservation_Schedule.html" class="btn btn-primary">
-                <i class="fas fa-calendar-check"></i> Reserve Table
-            </a>
-            <a href="Booking_History.html" class="btn btn-primary">
-                <i class="fas fa-history"></i> Booking History
-            </a>
-            <a href="Cancel_Reservation.html" class="btn btn-primary">
-                <i class="fas fa-ban"></i> Cancel Reservation
-            </a>
-            <a href="Feedback.html" class="btn btn-primary">
-                <i class="fas fa-comment-dots"></i> Feedback
-            </a>
-            <a href="Frequently_Asked_Questions.html" class="btn btn-primary">
-                <i class="fas fa-question"></i> FAQ
-            </a>
-            <a href="The_Librarians.html" class="btn btn-primary">
-                <i class="fas fa-user-librarian"></i> The Librarians
-            </a>
-            <a href="User.html" class="btn btn-primary">
-                <i class="fas fa-user"></i> User
-            </a>
-        </div>    
-
-        <!-- Search Form -->
-        <div class="search-container mb-4">
-            <form action="search_results.html" method="get" class="form-inline justify-content-center">
-                <input type="text" class="form-control mr-2" placeholder="Search..." name="search" style="border-radius: 20px;">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
+    <div class="content-container">
+        <div class="text-center my-5">
+            <h1>Need Help?</h1>
+            <h2>Contact Us!</h2>
+            <p>We're here to assist you with any questions or concerns you may have. Reach out to us, and we will respond as soon as possible!</p>
+            <div class="contact-info">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:tsam.library@newinti.edu.my">tsam.library@newinti.edu.my</a></p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <h5>Call Us</h5>
+                        <p>+604-6310138</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <h5>Opening Hours</h5>
+                        <p>Mon - Fri: 8 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    <script>
-        function goToDashboard() {
-            window.location.href = "dashboard.html";
-        }
-
-        function startChat() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            if (name && email) {
-                // Replace with the actual chat URL or function to start the chat
-                alert("Starting chat with " + name + " (" + email + ")");
-            } else {
-                alert("Please provide both name and email to start the chat.");
-            }
-        }
-    </script>
-</head>
-<body>
-    <h1>Need Help</h1>
-
-    <h2>Email Us</h2>
-    <p>We will get back to you as soon as possible!</p>
-    <p><a href="mailto:tsam.library@newinti.edu.my">tsam.library@newinti.edu.my</a></p>
-        
-    <button onclick="goToDashboard()">Close</button>
+    </div>
 
     <footer>
-        &copy; 2024 INTI University - All Rights Reserved
+        <p>Recommended Browser: Google Chrome</p>
+        <p>Copyright © 2024 INTI International College Penang Library</p>
+        <p>Tel: +604-6310138 | Fax: +604-6310193</p>
+        <p>&copy; 2024 INTI University - All Rights Reserved</p>
     </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
